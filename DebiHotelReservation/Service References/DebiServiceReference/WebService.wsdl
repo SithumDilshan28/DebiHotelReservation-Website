@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="autoIncrementRoomId">
+        <s:complexType />
+      </s:element>
+      <s:element name="autoIncrementRoomIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="autoIncrementRoomIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addRoomDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="price" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="package" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addRoomDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addRoomDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registerHotel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sigupPass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="signupCPass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registerHotelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registerHotelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchRoom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchRoomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchRoomResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateRoom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="price" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateRoomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateRoomResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindRoomCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindRoomCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindRoomCountryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindRoomCity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindRoomCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindRoomCityResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindRoomName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindRoomNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindRoomNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteRoom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteRoomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteRoomResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="autoIncrementRoomIdSoapIn">
+    <wsdl:part name="parameters" element="tns:autoIncrementRoomId" />
+  </wsdl:message>
+  <wsdl:message name="autoIncrementRoomIdSoapOut">
+    <wsdl:part name="parameters" element="tns:autoIncrementRoomIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="addRoomDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:addRoomDetails" />
+  </wsdl:message>
+  <wsdl:message name="addRoomDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:addRoomDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerHotelSoapIn">
+    <wsdl:part name="parameters" element="tns:registerHotel" />
+  </wsdl:message>
+  <wsdl:message name="registerHotelSoapOut">
+    <wsdl:part name="parameters" element="tns:registerHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchRoomSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchRoom" />
+  </wsdl:message>
+  <wsdl:message name="SearchRoomSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateRoomSoapIn">
+    <wsdl:part name="parameters" element="tns:updateRoom" />
+  </wsdl:message>
+  <wsdl:message name="updateRoomSoapOut">
+    <wsdl:part name="parameters" element="tns:updateRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindRoomCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:FindRoomCountry" />
+  </wsdl:message>
+  <wsdl:message name="FindRoomCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:FindRoomCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindRoomCitySoapIn">
+    <wsdl:part name="parameters" element="tns:FindRoomCity" />
+  </wsdl:message>
+  <wsdl:message name="FindRoomCitySoapOut">
+    <wsdl:part name="parameters" element="tns:FindRoomCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindRoomNameSoapIn">
+    <wsdl:part name="parameters" element="tns:FindRoomName" />
+  </wsdl:message>
+  <wsdl:message name="FindRoomNameSoapOut">
+    <wsdl:part name="parameters" element="tns:FindRoomNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteRoomSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteRoom" />
+  </wsdl:message>
+  <wsdl:message name="deleteRoomSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteRoomResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="autoIncrementRoomId">
+      <wsdl:input message="tns:autoIncrementRoomIdSoapIn" />
+      <wsdl:output message="tns:autoIncrementRoomIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addRoomDetails">
+      <wsdl:input message="tns:addRoomDetailsSoapIn" />
+      <wsdl:output message="tns:addRoomDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="registerHotel">
+      <wsdl:input message="tns:registerHotelSoapIn" />
+      <wsdl:output message="tns:registerHotelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRoom">
+      <wsdl:input message="tns:SearchRoomSoapIn" />
+      <wsdl:output message="tns:SearchRoomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRoom">
+      <wsdl:input message="tns:updateRoomSoapIn" />
+      <wsdl:output message="tns:updateRoomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRoomCountry">
+      <wsdl:input message="tns:FindRoomCountrySoapIn" />
+      <wsdl:output message="tns:FindRoomCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRoomCity">
+      <wsdl:input message="tns:FindRoomCitySoapIn" />
+      <wsdl:output message="tns:FindRoomCitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRoomName">
+      <wsdl:input message="tns:FindRoomNameSoapIn" />
+      <wsdl:output message="tns:FindRoomNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteRoom">
+      <wsdl:input message="tns:deleteRoomSoapIn" />
+      <wsdl:output message="tns:deleteRoomSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="autoIncrementRoomId">
+      <soap:operation soapAction="http://tempuri.org/autoIncrementRoomId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomDetails">
+      <soap:operation soapAction="http://tempuri.org/addRoomDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerHotel">
+      <soap:operation soapAction="http://tempuri.org/registerHotel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRoom">
+      <soap:operation soapAction="http://tempuri.org/SearchRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRoom">
+      <soap:operation soapAction="http://tempuri.org/updateRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRoomCountry">
+      <soap:operation soapAction="http://tempuri.org/FindRoomCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRoomCity">
+      <soap:operation soapAction="http://tempuri.org/FindRoomCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRoomName">
+      <soap:operation soapAction="http://tempuri.org/FindRoomName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRoom">
+      <soap:operation soapAction="http://tempuri.org/deleteRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="autoIncrementRoomId">
+      <soap12:operation soapAction="http://tempuri.org/autoIncrementRoomId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoomDetails">
+      <soap12:operation soapAction="http://tempuri.org/addRoomDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerHotel">
+      <soap12:operation soapAction="http://tempuri.org/registerHotel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRoom">
+      <soap12:operation soapAction="http://tempuri.org/SearchRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRoom">
+      <soap12:operation soapAction="http://tempuri.org/updateRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRoomCountry">
+      <soap12:operation soapAction="http://tempuri.org/FindRoomCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRoomCity">
+      <soap12:operation soapAction="http://tempuri.org/FindRoomCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRoomName">
+      <soap12:operation soapAction="http://tempuri.org/FindRoomName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRoom">
+      <soap12:operation soapAction="http://tempuri.org/deleteRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://localhost:55447/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://localhost:55447/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

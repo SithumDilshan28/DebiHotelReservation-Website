@@ -1,0 +1,23 @@
+.styletext{
+
+    font-size:15px;
+    color:red;
+
+}
+
+.dropdown1 {
+
+    width:200px;
+    height:30px;
+
+}
+
+.grid {
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+
+}
+
